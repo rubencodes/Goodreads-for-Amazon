@@ -1,0 +1,31 @@
+#goodreads-widget {
+	font-family: georgia, serif;
+	padding: 18px 0;
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
+}
+#goodreads-widget h1 {
+	font-weight:normal;
+	font-size: 16px;
+	border-bottom: 1px solid #BBB596;
+	margin-bottom: 0;
+}
+#goodreads-widget a {
+	text-decoration: none;
+	color:#660;
+}
+#goodreads-widget iframe {
+	width: 100%;
+	background-color: #fff;
+}
+#goodreads-widget a:hover { text-decoration: underline; }
+#goodreads-widget a:active {
+	color:#660;
+}
+
+.bookLink::after {
+  content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
+  margin: 0 3px 0 5px;
+}
