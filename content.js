@@ -126,7 +126,7 @@ class Goodreads {
 
 	// Creates a link to a book giveen the ISBN.
 	static createBookLink = (isbn) => {
-		const endpoint = `book/isbn/${isbn}`;
+		const endpoint = `/book/isbn/${isbn}`;
 		const requestURL = `${Goodreads.URL}${endpoint}`;
 
 		return `

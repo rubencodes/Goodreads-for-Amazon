@@ -1,6 +1,6 @@
 {
   "name": "Goodreads for Amazon",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "manifest_version": 2,
   "description": "See Goodreads reviews on Amazon",
   "homepage_url": "https://ruben.codes",
