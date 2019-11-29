@@ -1,3 +1,4 @@
+// Helpers for making generic network requests.
 class API {
 	// Sends a message to the background script to trigger a fetch request.
 	static request = (path, options) => {
@@ -25,7 +26,12 @@ class API {
 	};
 }
 
+// Helpers for interacting with the DOM.
 class DOM {
+	static getPageHTML = () => {
+		return document.body.innerHTML;
+	};
+
 	// Append HTML after an element with a given id.
 	static appendAfterElement = (element, htmlToAppend) => {
 		if (element) {
@@ -34,19 +40,23 @@ class DOM {
 	};
 }
 
+// Helpers for interacting with an Amazon webpage.
 class Amazon {
+	static ISBN10 = "<li><b>ISBN-10:</b> ([0-9A-z]*)</li>";
+	static ISBN13 = "<li><b>ISBN-13:</b> ([0-9A-z\-]*)</li>";
+
 	// Search the page for ISBNs.
 	static findISBN = () => {
-		const bodyHTML = document.body.innerHTML;
+		const html = DOM.getPageHTML();
 
 		// Try to find an ISBN-10.
-		const matches = bodyHTML.match("<li><b>ISBN-10:</b> ([0-9A-z]*)</li>");
+		const matches = html.match(Amazon.ISBN10);
 		if (matches) {
 			return matches[1];
 		}
 
 		// Fallback to looking for an ISBN-13.
-		const fallbackMatches = bodyHTML.match("<li><b>ISBN-13:</b> ([0-9A-z\-]*)</li>");
+		const fallbackMatches = html.match(Amazon.ISBN13);
 		if (fallbackMatches) {
 			return fallbackMatches[1];
 		}
@@ -78,6 +88,7 @@ class Amazon {
 	};
 }
 
+// Helpers for interacitng with the Goodreads API.
 class Goodreads {
 	static URL = "https://www.goodreads.com";
 	static KEY = "GOODREADS_API_KEY";
